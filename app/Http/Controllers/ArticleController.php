@@ -14,7 +14,17 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        return view('article.index');
+        $articles = Article::when(request()->has("keyword"),function($query){
+            $keyword = request()->keyword;
+            $query->where("title","like","%".$keyword."%");
+            $query->orWhere("description","like","%".$keyword."%");
+        })
+        ->when(request()->has('title'),function($query){
+            $sortType = request()->name ?? 'asc';
+            $query->orderBy("title",$sortType);
+        })
+        ->paginate(7)->withQueryString();
+        return view('article.index',compact('articles'));
     }
 
     /**
