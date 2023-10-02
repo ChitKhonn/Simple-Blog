@@ -15,6 +15,8 @@
                             <td>Title</td>
                             <td>Description</td>
                             <td>Control</td>
+                            <td>Created At</td>
+                            <td>Updated At</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -36,6 +38,26 @@
                                         @csrf
                                     </form>
 
+                                </td>
+                                <td>
+                                    <p class="small mb-0">
+                                        <i class="bi bi-clock"></i>
+                                        {{ $article->created_at->format("h:i a") }}
+                                    </p>
+                                    <p class="small mb-0">
+                                        <i class="bi bi-calendar"></i>
+                                        {{ $article->created_at->format("D M Y") }}
+                                    </p>
+                                </td>
+                                <td>
+                                    <p class="small mb-0">
+                                        <i class="bi bi-clock"></i>
+                                        {{ $article->updated_at->format("h:i a") }}
+                                    </p>
+                                    <p class="small mb-0">
+                                        <i class="bi bi-calendar"></i>
+                                        {{ $article->updated_at->format("D M Y") }}
+                                    </p>
                                 </td>
                             </tr>
                         @empty
