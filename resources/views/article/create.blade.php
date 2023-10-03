@@ -11,14 +11,15 @@
                     @csrf
                     <div class="mb-3">
                         <label class="form-label" for="">Article Title</label>
-                        <input type="text" class="form-control @error('title') is-invalid @enderror " name="title">
+                        <input type="text" value="{{old('title')}}" class="form-control @error('title') is-invalid @enderror " name="title">
                         @error('title')
                             <div class="invalid-feedback"> {{$message}} </div>
                         @enderror
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="">Description</label>
-                        <textarea type="text" class="form-control @error('description') is-invalid @enderror " name="description" rows="7">
+                        <textarea type="text"  class="form-control @error('description') is-invalid @enderror " name="description" rows="7">
+                            {{old('description')}}
                         </textarea>
                         @error('description')
                             <div class="invalid-feedback"> {{$message}} </div>
