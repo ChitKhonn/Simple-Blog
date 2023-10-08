@@ -83,6 +83,9 @@
                     </tbody>
                 </table>
 
+                <div class="">
+                    {{$articles->onEachside(1)->links()}}
+                </div>
             </div>
         </div>
     </div>

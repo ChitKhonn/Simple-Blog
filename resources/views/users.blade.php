@@ -62,12 +62,16 @@
                                     <p>
                                         There is no record
                                     </p>
-                                    <a class=" btn btn-sm btn-primary" href="{{ route('user.create') }}">Create User</a>
+
                                 </td>
                             </tr>
                         @endforelse
                     </tbody>
                 </table>
+
+                <div class="">
+                    {{$users->onEachside(1)->links()}}
+                </div>
 
             </div>
         </div>
