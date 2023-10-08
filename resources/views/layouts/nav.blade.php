@@ -23,6 +23,9 @@
                         <a class="nav-link" href="{{ route('category.create') }}">{{ __('Create Category') }}</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('category.index') }}">{{ __('Category List') }}</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('article.create') }}">{{ __('Create Article') }}</a>
                     </li>
                     <li class="nav-item">

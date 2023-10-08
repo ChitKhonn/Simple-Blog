@@ -17,6 +17,7 @@
                         <tr>
                             <td>#</td>
                             <td>Title</td>
+                            <td>Category</td>
                             <td>Owner</td>
                             <td>Control</td>
                             <td>Created At</td>
@@ -35,6 +36,7 @@
                                     </span>
                                 </td>
                                 <td> {{ $article->user_id }} </td>
+                                <td> {{ $article->category_id }} </td>
                                 <td>
                                     <div>
                                         <a class=" btn btn-sm btn-outline-primary" href="{{ route('article.show', $article->id) }}">
@@ -72,7 +74,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="6" class=" text-center">
+                                <td colspan="7" class=" text-center">
                                     <p>
                                         There is no record
                                     </p>

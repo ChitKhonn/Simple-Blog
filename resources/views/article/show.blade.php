@@ -14,6 +14,7 @@
 
                 <div>
                     <h4> {{$article->title}}  </h4>
+                    <h4> {{$article->category_id}}  </h4>
                     <div class="">
                         {{$article->description}}
                     </div>
