@@ -23,6 +23,7 @@ class ArticleController extends Controller
             $sortType = request()->name ?? 'asc';
             $query->orderBy("title",$sortType);
         })
+        ->latest("id")
         ->paginate(7)->withQueryString();
         return view('article.index',compact('articles'));
     }
